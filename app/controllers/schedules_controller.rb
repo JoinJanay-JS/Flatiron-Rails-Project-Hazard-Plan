@@ -6,7 +6,7 @@ class SchedulesController < ApplicationController
   # GET /schedules.json
   def index
     if current_user.admin?
-    @schedules = current_user.schedules.all
+    @schedules = Schedules.all
     else
       #binding.pry
       @schedules = current_user.schedules.where(user_id: current_user)

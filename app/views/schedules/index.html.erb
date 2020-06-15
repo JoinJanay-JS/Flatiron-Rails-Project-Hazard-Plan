@@ -1,4 +1,13 @@
-<p id="notice"><%= notice %></p>
+<%= month_calendar events: @schedules do |date, schedules| %>
+  <%= date %>
+
+  <% schedules.each do |schedule| %>
+    <div>
+      <%= link_to schedule.name, schedule, class: "link" %>
+    </div>
+  <% end %>
+<% end %>
+ 
 
 <h1>Schedules</h1>
 
@@ -17,8 +26,8 @@
     <% @schedules.each do |schedule| %>
       <tr>
         <td><%= schedule.name %></td>
-        <td><%= schedule.start_time %></td>
-        <td><%= schedule.end_time %></td>
+        <td><%= readable_time(schedule.start_time) %></td>
+        <td><%= readable_time(schedule.end_time) %></td>
         <td><%= schedule.user_id %></td>
         <td><%= link_to 'Show', schedule %></td>
         <td><%= link_to 'Edit', edit_schedule_path(schedule) %></td>
@@ -28,10 +37,6 @@
   </tbody>
 </table>
 
-<br>
-<div id="calendar" class="tab-panel active">
-    <h2>Schedule Calendar</h2>
-    <div id="schedule-calendar">
-      <%= render "calendar", schedules: @schedules  %>
-    </div>
+
+
 <%= link_to 'New Schedule', new_schedule_path %>
