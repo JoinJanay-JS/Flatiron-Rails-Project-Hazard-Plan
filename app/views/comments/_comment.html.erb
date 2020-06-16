@@ -1,0 +1,7 @@
+
+<%= comment.user.username %> commented
+
+
+<% if owner_of(comment) %>
+      <%= link_to "Delete", schedule_comment_path(comment.schedule, comment), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-destroy" %>
+    <% end %>

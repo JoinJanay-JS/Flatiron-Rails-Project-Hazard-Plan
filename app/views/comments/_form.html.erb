@@ -1,27 +1,12 @@
-<%= form_with(model: comment, local: true) do |form| %>
-  <% if comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
 
-      <ul>
-        <% comment.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+ <p> comment as <%= current_user.username %></p>
+<%= form_for([@schedule, @comment], remote: true) do |f| %>
+  <div class="relative">
+    <%= f.hidden_field :reply, class: "input h-32 border border-grey-light resize-none", placeholder: "Add any notes or replies here" %>
 
-  <div class="field">
-    <%= form.label :schedule_id %>
-    <%= form.text_field :schedule_id %>
-  </div>
+    <trix-editor input="comment_reply" id="comment_reply_trix" class="h-32 p-4"></trix-editor>
 
-  <div class="field">
-    <%= form.label :reply %>
-    <%= form.text_area :reply %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+    <%= f.submit class: "btn btn-default" %>
   </div>
 <% end %>
+ 

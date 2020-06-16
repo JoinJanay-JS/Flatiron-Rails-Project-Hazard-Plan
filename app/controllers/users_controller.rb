@@ -1,11 +1,9 @@
 class UsersController < ApplicationController
-before_action: role_admin
 
 
-def index
-    @users = User.all
-
-end 
+    def index
+        @users = User.all
+      end
 
 private 
 
