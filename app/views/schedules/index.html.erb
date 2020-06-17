@@ -39,6 +39,10 @@
   </tbody>
 </table>
 
+<div class= "field">
+<%#= form.label :comment %>
+<%#= form.text_area: :comment, :id :comment_schedule>
 <trix-editor input="comment"></trix-editor>
+</div>
 
 <%= link_to 'New Schedule', new_schedule_path %>
