@@ -4,6 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  devise :omniauthable, omniauth_providers: [:google_oauth2]
+
         has_many :schedules, dependent: :destroy
-        has_many :comments, dependent: :destroy
+        has_many :comments, through: :schedules, dependent: :destroy
+        has_secure_password
+        accepts_nested_attributes_for :schedules
+
+        validates :username, presence: true, uniqueness: true
+
 end
