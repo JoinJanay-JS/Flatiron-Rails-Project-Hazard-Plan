@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
         has_many :schedules, dependent: :destroy
         has_many :comments, through: :schedules, dependent: :destroy
-        has_secure_password
+       
         accepts_nested_attributes_for :schedules
 
         validates :username, presence: true, uniqueness: true

@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>HazardPlan</title>
-    <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,6 +42,7 @@
             <% unless user_signed_in? %>
             <%= link_to "Login", new_user_session_path, class:"btn btn-default mr-2" %>
             <%= link_to "Sign Up", new_user_registration_path, class:"btn btn-default" %>
+            <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, class:"btn btn-default mr-2" %>
             <% else %>
             <%= link_to "Dashboard", schedules_path, class: "btn btn-default mr-2" %>
             <%= link_to "Create a New Schedule", new_schedule_path, class: "btn btn-default mr-2" unless admin? %>

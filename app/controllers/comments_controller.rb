@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  scope :commented, -> {where(commented: true)}
+
   before_action :authenticate_user!
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   before_action :set_schedule
