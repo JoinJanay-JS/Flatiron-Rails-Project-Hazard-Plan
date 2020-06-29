@@ -4,8 +4,14 @@
     <%= date %>
     <% schedules.each do |schedule| %>
         <div>
-            <%= link_to schedule.name, meeting, class: "link" %>
+            <%= link_to schedule.name, schedule, class: "link" %>
         </div>
+
+                <%= readable_time(schedule.start_time) %> &ndash;
+              <%= readable_time(schedule.end_time) %>
+            </div>
+
+
 
     <% end %>  
 <% end %> 
