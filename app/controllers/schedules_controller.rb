@@ -4,6 +4,7 @@ class SchedulesController < ApplicationController
 
   # GET /schedules
   # GET /schedules.json
+    
   def index
     if current_user.admin?
     @schedules = Schedules.all

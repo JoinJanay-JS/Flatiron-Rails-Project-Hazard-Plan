@@ -29,9 +29,10 @@ gem 'jbuilder', '~> 2.7'
 gem 'simple_calendar'
 gem 'trix'
 gem 'omniauth'
-gem 'omniauth-twitter'
+#gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
-#gem 'activerecord-session_store'
+gem 'activerecord-session_store'
+#gem 'protected_attributes'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
