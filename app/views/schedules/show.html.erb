@@ -23,11 +23,16 @@
 <%= link_to 'Edit', edit_schedule_path(@schedule) %> |
 <%= link_to 'Back', schedules_path %>
 
-<h4>Comments</h4>
-    <hr class="border" />
+<br>
+<br>
+
+<h2><strong> Comments </strong></h2>
+
+<br>
+<br>
+
 
     <% unless user_signed_in? %>
-      <div class="bg-grey-lighter rounded p-4 mt-4 text-center">
         <p class="text-sm text-grey-dark"><%= link_to "Login", new_user_session_path, class: "link" %> or <%= link_to "Sign up", new_user_regsitration_path, class: "link" %> to comment.</p>
       </div>
     <% else %>

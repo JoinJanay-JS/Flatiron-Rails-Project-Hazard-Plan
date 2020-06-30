@@ -11,25 +11,30 @@
     </div>
   <% end %>
 
+
+
   <div class="field">
-    <%= form.label :name %>
+    <strong><%= form.label :name %></strong>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :start_time %>
+    <strong><%= form.label :start_time %></strong>
     <%= form.datetime_select :start_time %>
   </div>
 
   <div class="field">
-    <%= form.label :end_time %>
+    <strong><%= form.label :end_time %></strong>
     <%= form.datetime_select :end_time %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <strong><%= form.submit %></strong>
   </div>
 <% end %>
+
+<br>
+<br>
 
  <div class="py-10 lg:py-16 px-4 flex flex-wrap items-center justify-between">
     <div class="lg:w-1/2 w-full mb-4 lg:mb-0">
