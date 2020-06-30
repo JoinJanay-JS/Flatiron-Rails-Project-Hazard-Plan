@@ -15,9 +15,11 @@ ActiveRecord::Schema.define(version: 2020_06_30_022229) do
   create_table "comments", force: :cascade do |t|
     t.integer "schedule_id", null: false
     t.text "reply"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["schedule_id"], name: "index_comments_on_schedule_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -70,5 +72,6 @@ ActiveRecord::Schema.define(version: 2020_06_30_022229) do
   end
 
   add_foreign_key "comments", "schedules"
+  add_foreign_key "comments", "users"
   add_foreign_key "schedules", "users"
 end
